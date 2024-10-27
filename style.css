@@ -1,23 +1,28 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
 }
 
 body {
+    background-color: #EDE8F5;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    margin-top: 80px;
 }
 
 header {
-    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0; /* Align with the left edge */
+    right: 0; /* Align with the right edge */
+    background-color: #7091E6;
     padding: 1rem;
+    padding-bottom: 20px;
     text-align: center;
-}
-
-header nav ul {
-    list-style-type: none;
+    z-index: 1000; /* Ensure it's above other content */
+    transition: top 0.3s ease; /* Smooth transition for top */  
 }
 
 header nav ul li {
@@ -31,9 +36,12 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    text-decoration: underline;
+    color: white;
+    background-color: #3d52a0;
+    border-radius: 50px; 
+    padding: 10px 20px; 
+    cursor: pointer;
 }
-
 section {
     padding: 2rem;
     text-align: center;
@@ -44,13 +52,8 @@ section h2 {
     font-size: 2rem;
 }
 
-#home img {
-    width: 150px;
-    border-radius: 50%;
-    margin: 1rem 0;
-}
 
-#projects ul, #skills ul {
+#projects ul, #skills ul, #contact ul {
     list-style-type: none;
 }
 
@@ -58,17 +61,95 @@ section h2 {
     margin-bottom: 0.5rem;
 }
 
-#contact ul {
-    list-style-type: none;
+#projects ul li :hover{
+    color: white;
+    background-color: #3d52a0;
+    border-radius: 50px; 
+    padding: 10px 20px; 
+    cursor: pointer;
 }
 
+#contact ul li {
+    margin : 10px;
+}
+#contact ul li :hover{
+    color: white;
+    background-color: #3d52a0;
+    border-radius: 50px; 
+    padding: 10px 20px; 
+    cursor: pointer;
+}
 footer {
-    background-color: #333;
+    background-color: #7091E6;
     color: white;
     padding: 1rem;
     text-align: center;
 }
 
-footer p {
-    margin: 0;
+/* Style for the home section */
+#home, #projects, #skills, #experience {
+    position: relative; /* Required for absolute positioning of the border */
+    padding: 50px;
+    margin: 20px auto; /* Center the section */
+    max-width: 800px; /* Limit the width */
+    border-radius: 20px; /* Round corners initially */
+    /*transition: all 1.4s ease-in-out;  Smooth transition */
+    overflow: hidden; /* Hide overflow */
+}
+  
+  /* Hover effect for the home section */
+#home:hover, #projects:hover, #skills:hover, #experience:hover {
+    height: 50vh; /* Expand to full viewport height */
+    border: 5px solid #7091E6; /* Circular rectangular border */
+    background-color: #3d52a0;
+    border-radius: 20px; /* Maintain rounded corners */
+    transform: scale(1.05); /* Zoom in */
+    z-index: 1; /* Bring to the front */
+}
+#home, #projects, #skills, #experience {
+    transition: height 0.4s ease, border 0.4s ease, transform 0.4s ease, z-index 0.4s ease; /* Add separate transitions */
+}
+  
+  /* Extra details styling */
+.extra-details {
+    display: none; /* Initially hide extra details */
+    margin-top: 20px; /* Space above extra details */
+    color: #dcdcdc; /* Light color for paragraph */
+    transition: opacity 0.3s; /* Transition for opacity */
+}
+  
+  /* Show extra details on hover */
+#home:hover .extra-details , #projects:hover .extra-details, #skills:hover .extra-details, #experience:hover .extra-details {
+    display: block; /* Show extra details */
+    opacity: 1; /* Ensure opacity is fully visible */
+}
+  
+  /* Headings and Paragraphs */
+#home h1, #projects h1, #skills h1, #experience h1 {
+    color: #333; /* Dazzling color for heading */
+    margin-bottom: 15px;
+    transition: color 0.3s; /* Transition for color */
+}
+  
+#home p, #projects p, #skills p, #experience p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333; /* Light color for paragraph */
+    transition: color 0.3s; /* Transition for color */
+}
+  
+  /* Image Styling */
+#home img {
+    width: 150px; /* Fixed width for the profile picture */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular image */
+    margin: 10px 0;
+}
+  
+/* Hover effect for text */
+#home:hover h1, #home:hover p, #projects:hover h1, 
+#projects:hover p, #projects:hover ul li a, #skills:hover h1, 
+#skills:hover p, #skills:hover ul, 
+#experience:hover h1, #experience:hover p {
+    color: #ffffff; /* Change color on hover */
 }
