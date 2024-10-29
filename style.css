@@ -139,10 +139,16 @@ footer {
 }
   
   /* Image Styling */
-#home img, #projects img {
+#home img {
     width: 150px; /* Fixed width for the profile picture */
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Circular image */
+    margin: 10px 0;
+}
+#projects img {
+    width: 75px;
+    height: auto;
+    border-radius: 50%;
     margin: 10px 0;
 }
   
